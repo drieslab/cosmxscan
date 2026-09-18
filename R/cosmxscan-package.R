@@ -12,6 +12,10 @@
 #' a file, pull batches until end of file, then close. Peak memory is one
 #' batch, so a matrix far larger than RAM can be streamed into any consumer.
 #'
+#' `skip_cols` sets the origin of the emitted `col_id` only. Fields 1 and 2
+#' are always read as `fov` and `cell_ID`, and every later field is always
+#' treated as a feature, so the documented value for CosMx is 2.
+#'
 #' @section Measured on slide S0 (493,834 cells by 20,378 features):
 #' \tabular{lr}{
 #'   cosmxscan (this package) \tab 100 s \cr

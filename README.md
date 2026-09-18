@@ -48,8 +48,11 @@ reader$close()
 ```
 
 `skip_cols` is the number of leading non-feature columns; CosMx ships `fov`
-and `cell_ID`, so it is 2. Feature identifiers come from the header line,
-which the caller reads separately.
+and `cell_ID`, so it is 2. Note that it only sets the origin of the emitted
+`col_id`: fields 1 and 2 are always read as `fov` and `cell_ID`, and every
+field after them is always treated as a feature. Passing anything other than 2
+shifts `col_id` without changing which columns are scanned. Feature
+identifiers come from the header line, which the caller reads separately.
 
 ### Fields returned by `next_chunk()`
 
