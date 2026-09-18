@@ -1,0 +1,22 @@
+[package]
+name = 'cosmxscan'
+publish = false
+version = '0.1.0'
+edition = '2021'
+rust-version = '1.65'
+
+[lib]
+crate-type = [ 'rlib', 'staticlib' ]
+name = 'cosmxscan'
+
+[[bin]]
+name = 'document'
+path = 'document.rs'
+
+[dependencies]
+flate2 = "1"
+extendr-api = '*'
+
+[profile.release]
+lto = true
+codegen-units = 1

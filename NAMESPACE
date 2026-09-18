@@ -1,0 +1,4 @@
+useDynLib(cosmxscan, .registration = TRUE)
+export(CosmxReader)
+S3method("$", CosmxReader)
+S3method("[[", CosmxReader)
